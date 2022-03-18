@@ -3,14 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarteComponent } from './components/carte/carte.component';
+
+//pour apicrud service :
+import{HttpClientModule} from '@angular/common/http';
+// googlemaps:
+import { AgmCoreModule } from '@agm/core';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CarteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAbdp_mHCaaX75g2ZTuxYlHyqHqqTF_EQk'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
